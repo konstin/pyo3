@@ -78,15 +78,13 @@ pub const PY_TYPE_FLAG_DICT: usize = 1 << 3;
 /// use pyo3::prelude::*;
 ///
 /// #[pyclass]
-/// struct MyClass {
-///    token: PyToken
-/// }
+/// struct MyClass { }
 ///
 /// #[pymethods]
 /// impl MyClass {
 ///    #[new]
 ///    fn __new__(obj: &PyRawObject) -> PyResult<()> {
-///        obj.init(|token| MyClass { token })
+///        obj.init(|_| MyClass { })
 ///    }
 /// }
 /// ```
@@ -240,7 +238,7 @@ where
             }
         }
 
-        match (*T::type_object()).tp_free {
+        match T::type_object().tp_free {
             Some(free) => free(obj as *mut c_void),
             None => {
                 let ty = ffi::Py_TYPE(obj);
