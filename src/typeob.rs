@@ -4,7 +4,7 @@
 
 use crate::class::methods::PyMethodDefType;
 use crate::err::{PyErr, PyResult};
-use crate::instance::{Py, PyObjectWithToken, PyToken};
+use crate::instance::{Py, PyObjectWithToken};
 use crate::python::ToPyPointer;
 use crate::python::{IntoPyPointer, Python};
 use crate::types::PyObjectRef;
@@ -84,7 +84,7 @@ pub const PY_TYPE_FLAG_DICT: usize = 1 << 3;
 /// impl MyClass {
 ///    #[new]
 ///    fn __new__(obj: &PyRawObject) -> PyResult<()> {
-///        obj.init(|_| MyClass { })
+///        obj.init(||   MyClass { })
 ///    }
 /// }
 /// ```
@@ -142,10 +142,10 @@ impl PyRawObject {
 
     pub fn init<T, F>(&self, f: F) -> PyResult<()>
     where
-        F: FnOnce(PyToken) -> T,
+        F: FnOnce() -> T,
         T: PyTypeInfo,
     {
-        let value = f(PyToken::new());
+        let value = f();
 
         unsafe {
             let ptr = (self.ptr as *mut u8).offset(T::OFFSET) as *mut T;
