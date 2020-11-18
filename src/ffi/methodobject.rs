@@ -2,7 +2,7 @@ use crate::ffi::object::{PyObject, PyTypeObject, Py_TYPE};
 use std::mem;
 use std::os::raw::{c_char, c_int};
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPyCFunction_Type")]
     pub static mut PyCFunction_Type: PyTypeObject;

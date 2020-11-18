@@ -10,7 +10,7 @@ pub type Py_UCS4 = u32;
 pub type Py_UCS2 = u16;
 pub type Py_UCS1 = u8;
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPyUnicode_Type")]
     pub static mut PyUnicode_Type: PyTypeObject;

@@ -636,7 +636,7 @@ fn get_rustc_link_lib_macos(config: &InterpreterConfig) -> Result<String> {
 fn get_rustc_link_lib_windows(config: &InterpreterConfig) -> Result<String> {
     // Py_ENABLE_SHARED doesn't seem to be present on windows.
     Ok(format!(
-        "cargo:rustc-link-lib=pythonXY:{}",
+        "cargo:rustc-link-lib={}",
         get_library_link_name(&config.version, &config.ld_version)
     ))
 }

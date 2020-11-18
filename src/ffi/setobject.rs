@@ -2,7 +2,7 @@ use crate::ffi::object::*;
 use crate::ffi::pyport::{Py_hash_t, Py_ssize_t};
 use std::os::raw::c_int;
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPySet_Type")]
     pub static mut PySet_Type: PyTypeObject;

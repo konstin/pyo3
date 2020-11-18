@@ -1,7 +1,7 @@
 use crate::ffi::object::*;
 use std::os::raw::{c_char, c_int, c_void};
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPyCapsule_Type")]
     pub static mut PyCapsule_Type: PyTypeObject;

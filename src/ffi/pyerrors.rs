@@ -169,7 +169,7 @@ pub unsafe fn PyUnicodeDecodeError_Create(
     );
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPyExc_BaseException")]
     pub static mut PyExc_BaseException: *mut PyObject;

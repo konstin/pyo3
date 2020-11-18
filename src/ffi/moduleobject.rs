@@ -3,7 +3,7 @@ use crate::ffi::object::*;
 use crate::ffi::pyport::Py_ssize_t;
 use std::os::raw::{c_char, c_int, c_void};
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPyModule_Type")]
     pub static mut PyModule_Type: PyTypeObject;
@@ -40,7 +40,7 @@ extern "C" {
     pub fn PyModuleDef_Init(arg1: *mut PyModuleDef) -> *mut PyObject;
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     pub static mut PyModuleDef_Type: PyTypeObject;
 }

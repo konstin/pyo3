@@ -18,7 +18,7 @@ pub struct PyGenObject {
     pub gi_weakreflist: *mut PyObject,
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     pub static mut PyGen_Type: PyTypeObject;
 }
@@ -38,7 +38,7 @@ extern "C" {
     pub fn PyGen_NeedsFinalizing(op: *mut PyGenObject) -> c_int;
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     pub static mut PyCoro_Type: PyTypeObject;
 }
@@ -48,7 +48,7 @@ pub unsafe fn PyCoro_Check(op: *mut PyObject) -> c_int {
     PyObject_TypeCheck(op, &mut PyCoro_Type)
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     pub static mut _PyCoroWrapper_Type: PyTypeObject;
 }
@@ -58,7 +58,7 @@ pub unsafe fn PyCoroWrapper_Check(op: *mut PyObject) -> c_int {
     PyObject_TypeCheck(op, &mut _PyCoroWrapper_Type)
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     pub static mut PyAsyncGen_Type: PyTypeObject;
 }

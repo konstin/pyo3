@@ -7,7 +7,7 @@ pub struct PyFloatObject {
     pub ob_fval: c_double,
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPyFloat_Type")]
     pub static mut PyFloat_Type: PyTypeObject;

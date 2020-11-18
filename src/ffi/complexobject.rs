@@ -1,7 +1,7 @@
 use crate::ffi::object::*;
 use std::os::raw::{c_double, c_int};
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPyComplex_Type")]
     pub static mut PyComplex_Type: PyTypeObject;

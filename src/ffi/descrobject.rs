@@ -42,7 +42,7 @@ pub const PyGetSetDef_DICT: PyGetSetDef = PyGetSetDef {
     closure: ptr::null_mut(),
 };
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPyClassMethodDescr_Type")]
     pub static mut PyClassMethodDescr_Type: PyTypeObject;

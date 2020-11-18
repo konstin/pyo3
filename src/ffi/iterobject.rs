@@ -1,7 +1,7 @@
 use crate::ffi::object::*;
 use std::os::raw::c_int;
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     pub static mut PySeqIter_Type: PyTypeObject;
     pub static mut PyCallIter_Type: PyTypeObject;

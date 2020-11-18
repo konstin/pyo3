@@ -12,7 +12,7 @@ pub unsafe fn Py_Ellipsis() -> *mut PyObject {
     &mut _Py_EllipsisObject
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPySlice_Type")]
     pub static mut PySlice_Type: PyTypeObject;

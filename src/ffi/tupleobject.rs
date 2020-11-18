@@ -8,7 +8,7 @@ pub struct PyTupleObject {
     pub ob_item: [*mut PyObject; 1],
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPyTuple_Type")]
     pub static mut PyTuple_Type: PyTypeObject;

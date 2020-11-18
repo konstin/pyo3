@@ -11,7 +11,7 @@ pub struct PyLongObject {
     _unused: [u8; 0],
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPyLong_Type")]
     pub static mut PyLong_Type: PyTypeObject;

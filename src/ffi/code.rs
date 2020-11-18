@@ -70,7 +70,7 @@ pub const CO_FUTURE_GENERATOR_STOP: c_int = 0x8_0000;
 pub const CO_MAXBLOCKS: usize = 20;
 pub type FreeFunc = extern "C" fn(*mut c_void) -> c_void;
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     pub static mut PyCode_Type: PyTypeObject;
 }

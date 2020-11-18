@@ -10,7 +10,7 @@ pub struct PyListObject {
     pub allocated: Py_ssize_t,
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPyList_Type")]
     pub static mut PyList_Type: PyTypeObject;

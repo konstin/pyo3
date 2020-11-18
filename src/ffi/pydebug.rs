@@ -1,7 +1,7 @@
 use std::os::raw::c_int;
 
 #[cfg(not(Py_LIMITED_API))]
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPy_DebugFlag")]
     pub static mut Py_DebugFlag: c_int;

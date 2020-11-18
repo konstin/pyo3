@@ -624,7 +624,7 @@ pub unsafe fn PyObject_TypeCheck(ob: *mut PyObject, tp: *mut PyTypeObject) -> c_
     (Py_TYPE(ob) == tp || PyType_IsSubtype(Py_TYPE(ob), tp) != 0) as c_int
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     /// built-in 'type'
     #[cfg_attr(PyPy, link_name = "PyPyType_Type")]
@@ -867,7 +867,7 @@ extern "C" {
     pub fn Py_DecRef(o: *mut PyObject);
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "_PyPy_NoneStruct")]
     static mut _Py_NoneStruct: PyObject;

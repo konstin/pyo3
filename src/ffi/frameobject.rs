@@ -45,7 +45,7 @@ pub struct PyFrameObject {
     pub f_localsplus: [*mut PyObject; 1],         /* locals+stack, dynamically sized */
 }
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     pub static mut PyFrame_Type: PyTypeObject;
 }

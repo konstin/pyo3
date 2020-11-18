@@ -2,7 +2,7 @@ use crate::ffi::object::*;
 use crate::ffi::pyport::Py_ssize_t;
 use std::os::raw::{c_char, c_int};
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPyMemoryView_Type")]
     pub static mut PyMemoryView_Type: PyTypeObject;

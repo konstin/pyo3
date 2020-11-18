@@ -2,7 +2,7 @@ use crate::ffi::longobject::PyLongObject;
 use crate::ffi::object::*;
 use std::os::raw::{c_int, c_long};
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg_attr(PyPy, link_name = "PyPyBool_Type")]
     pub static mut PyBool_Type: PyTypeObject;

@@ -2,7 +2,7 @@ use std::os::raw::c_int;
 
 use crate::ffi::object::{PyObject, PyTypeObject, Py_TYPE};
 
-#[cfg_attr(windows, link(name = "pythonXY"))]
+//#[cfg_attr(windows, link(name = "pythonXY"))]
 extern "C" {
     #[cfg(not(Py_LIMITED_API))]
     #[cfg_attr(PyPy, link_name = "PyPyFunction_Type")]
