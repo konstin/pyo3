@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - linker-crimes-on-windows
   pull_request:
 
 env:
